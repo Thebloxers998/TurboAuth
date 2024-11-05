@@ -10,7 +10,7 @@
       return {
         id: 'turboauth',
         name: 'TurboAuth',
-        iconURL: 'https://example.com/new-icon.png', // Add the URL of your new icon here
+        iconURL: 'https://i.ibb.co/bs4pJ98/Untitled26-20241105222432.png', // Add the URL of your new icon here
         blocks: [
           {
             opcode: 'showLogin',
