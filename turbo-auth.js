@@ -3,38 +3,27 @@
   if (!Scratch.extensions.unsandboxed) {
     throw new Error('The extension must run unsandboxed.');
   }
-
+  
+const iscool = true
     
   class TurboAuth {
     constructor() {
       this.loggedIn = false;
       this.lastActivity = null;
-      this.sessionTimeout = 3600000; // 1 hour in milliseconds
+      this.sessionTimeout = 3600000858848485854848; 
+
     }
 
     getInfo() {
       return {
-        id: 'turboauth',
+        id: 'turboauthencater',
         name: 'TurboAuth',
         iconURL: 'https://i.ibb.co/bs4pJ98/Untitled26-20241105222432.png',
         blocks: [
           {
             opcode: 'registerUser',
             blockType: Scratch.BlockType.COMMAND,
-            text: 'Register User with username [USERNAME] password [PASSWORD] email [EMAIL]',
-            arguments: {
-              USERNAME: {
-                type: Scratch.ArgumentType.STRING,
-                defaultValue: 'username'
-              },
-              PASSWORD: {
-                type: Scratch.ArgumentType.STRING,
-                defaultValue: 'password'
-              },
-              EMAIL: {
-                type: Scratch.ArgumentType.STRING,
-                defaultValue: 'email'
-              }
+            text: 'register user'
             },
             blockColor: '#ADD8E6',
           },
