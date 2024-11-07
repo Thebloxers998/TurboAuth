@@ -1,6 +1,10 @@
 (function(Scratch) {
   'use strict';
+  if (!Scratch.extensions.unsandboxed) {
+    throw new Error('The extension must run unsandboxed.');
+  }
 
+    
   class TurboAuth {
     constructor() {
       this.loggedIn = false;
