@@ -16,9 +16,9 @@
 
     getInfo() {
       return {
-        id: 'turboauthencater',
+        id: 'turboauth',
         name: 'TurboAuth',
-        iconURL: 'https://i.ibb.co/bs4pJ98/Untitled26-20241105222432.png',
+        iconURL: 'https://i.ibb.co/bs4pJ98/Untitled26-20241105222432.png'
         blocks: [
           {
             opcode: 'registerUser',
@@ -63,7 +63,12 @@
             },
             blockColor: '#ADD8E6',
           },
-          {
+        }
+        {
+        text: "Roles",
+        blockType: Scratch.BlockType.LABEL
+        },
+    {
             opcode: 'hasUserRole',
             blockType: Scratch.BlockType.BOOLEAN,
             text: 'user has role [ROLE]',
