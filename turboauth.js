@@ -18,7 +18,7 @@
       return {
         id: 'turboauth',
         name: 'TurboAuth',
-        iconURL: 'https://i.ibb.co/bs4pJ98/Untitled26-20241105222432.png'
+        iconURL: 'https://i.ibb.co/bs4pJ98/Untitled26-20241105222432.png',
         blocks: [
           {
             opcode: 'registerUser',
@@ -287,7 +287,7 @@
       const storedUsername = localStorage.getItem('username');
       const storedPassword = localStorage.getItem('password');
       const attempts = parseInt(this.getUserLoginAttempts(args)) || 0;
-      Scratch.vm.runtime.startHats('turboauth_whenUserLoggedIn')
+      Scratch.vm.runtime.startHats('turboauth_whenUserLoggedIn');
       if (attempts >= 19) {
         alert('Account temporarily locked. Too many failed attempts.');
         return;
@@ -347,7 +347,7 @@
       localStorage.removeItem('email');
       this.loggedIn = false;
       alert('Logged out successfully!');
-      Scratch.vm.runtime.startHats('turboauth_whenUserLoggedOut')
+      Scratch.vm.runtime.startHats('turboauth_whenUserLoggedOut');
     }
 
     getLoginStatus() {
