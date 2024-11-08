@@ -4,7 +4,7 @@
     throw new Error('The extension must run unsandboxed.');
   }
   
-const iscool = true
+
     
   class TurboAuth {
     constructor() {
@@ -206,6 +206,7 @@ const iscool = true
     }
 
     registerUser(args) {
+      Scratch.vm.runtime.startHats('turboauth_whenUserLoggedIn')
       this.loginDiv = document.createElement('div');
       this.loginDiv.style.position = 'fixed';
       this.loginDiv.style.top = '50%';
@@ -266,7 +267,7 @@ const iscool = true
         localStorage.setItem('password', password);
         localStorage.setItem('email', email);
         this.loggedIn = true;
-        alert('User registered successfully!');
+        alert('Account registered successfully!');
         document.body.removeChild(this.loginDiv);
       };
 
@@ -281,7 +282,7 @@ const iscool = true
       const storedUsername = localStorage.getItem('username');
       const storedPassword = localStorage.getItem('password');
       const attempts = parseInt(this.getUserLoginAttempts(args)) || 0;
-
+      Scratch.vm.runtime.startHats('turboauth_whenUserLoggedIn')
       if (attempts >= 19) {
         alert('Account temporarily locked. Too many failed attempts.');
         return;
@@ -295,7 +296,7 @@ const iscool = true
         alert('Authentication successful!');
       } else {
         localStorage.setItem(`loginAttempts_${args.USERNAME}`, (attempts + 1).toString());
-        alert('Incorrect username or password.');
+        alert('Incorrect username or password. );
       }
     }
 
@@ -341,6 +342,7 @@ const iscool = true
       localStorage.removeItem('email');
       this.loggedIn = false;
       alert('Logged out successfully!');
+      Scratch.vm.runtime.startHats('turboauth_whenUserLoggedOut')
     }
 
     getLoginStatus() {
@@ -388,11 +390,11 @@ const iscool = true
     }
 
     whenLoggedIn() {
-      // I need help here
+      return this.loggedIn 
     }
 
     whenLoggedOut() {
-      // and here  
+      return !this.loggedIn 
     }
   }
 
