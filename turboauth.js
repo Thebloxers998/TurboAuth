@@ -2,7 +2,8 @@ class TurboAuth {
     constructor() {
         this.loggedIn = false;
         this.token = null;
-    }
+        this.server = "http://localhost:3000"   
+         }
 
     getInfo() {
         return {
@@ -54,7 +55,7 @@ class TurboAuth {
 
     loginUser(args) {
         const { USERNAME, PASSWORD } = args;
-        fetch('http://localhost:3000/login', {
+        fetch(this.server, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
